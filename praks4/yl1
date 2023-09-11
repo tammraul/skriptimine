@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# Selgitus
+#See skript küsib kasutajalt ees- ja perenime ning tervitab teda."
+#
+# Küsi ees- ja perenime
+echo -n "Sisesta oma ees- ja perenimi: "
+read eesnimi perenimi
+#
+# Tervita kasutajat
+echo "Tere tulemast, $eesnimi $perenimi!"
