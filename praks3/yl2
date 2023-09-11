@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# See skript otsib .log lõpuga failid, loeb neid ning väljastab failide nimekirja
+# sorteeritud kahanemisjärjekorras vastavalt ridade arvule.
+
+# Määrab kausta, kus otsime .log lõpuga faile
+log_directory="/var/log"
+
+# Otsib ja loeb .log lõpuga failid
+log_files=$(find "$log_directory" -type f -name "*.log")
+
+# Loob ajutise faili nimekirja salvestamiseks
+temp_file=$(mktemp)
+
+# Loop failide kaudu ja salvestab nende ridade arv ajutisse faili
+for file in $log_files
+do
+    line_count=$(wc -l < "$file")
+    echo "$line_count $file" >> "$temp_file"
+done
+
+# Sorteerib failid kahanemisjärjekorras ridade arvu järgi
+sorted_files=$(sort -nr "$temp_file" | cut -d" " -f2-)
+
+# Väljastab failide nimekirja
+echo "Failid, sorteeritud kahanemisjärjekorras ridade arvu järgi:"
+echo "$sorted_files"
+
+# Kustutab ajutise faili
+rm "$temp_file"
