@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# küsib kasutaja nime
+echo "Sisesta oma nimi:"
+read nimi
+#
+# Tervitab kasutajat
+echo "Tere Tulemast, $nimi"
+#
+# Küsib kasutaja sünniaastat
+echo "Sisesta oma sünniaasta (YYYY):"
+read synniaasta
+#
+# Arvutab kasutaja vanus
+praegune_aasta=$(date +%Y)
+vanus=$(( $praegune_aasta - $synniaasta ))
+
+# Kuvab kasutaja vanuse 
+echo "$nimi, Sina oled $vanus aasta vana."
