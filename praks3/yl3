@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# See skript väljastab masina nime ja serveri tööajaga seotud info.
+#
+# Määrab masina nime
+machine_name=$(hostname)
+#
+# Saab serveri tööaja ja lõikab välja vajaliku info
+uptime_info=$(uptime | awk -F, '{print $1}')
+#
+# Väljastab tulemused
+echo "Masin: $machine_name"
+echo "Serveri tööaeg: $uptime_info"
