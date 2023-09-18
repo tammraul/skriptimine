@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+echo  Pühapäev - 0, Esmaspäev - 1, Teisipäev - 2, Kolmapäev - 3, Neljapäev - 4, Reede - 5, Laupäev - 6
+#
+echo "Sisesta millal sõidad ara: "
+read alguspaev
+#
+echo "Sisesta reisi ööpäevade arv: "
+read paevad
+#
+tagasi_paev=$((($alguspaev +$paevad) % 7))
+#
+# Tulemus
+echo "Tagasi oled päeval number $tagasi_paev"
