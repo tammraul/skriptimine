@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+#
+read "Sisesta ainepunktide arv : " 
+read "Sisesta nadalate arv: "
+#
+#Teisendab ainepunktid tundideks
+maht=$((maht * 26))
+#
+aeg="echo "scale=1;$maht/$kestus" | bc"
+#
+umarda="echo "($aeg+0.9)/1" | bc"
+#
+echo "Eeldatav nadalane ajakulu:" $umarda "tundi."
