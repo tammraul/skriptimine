@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# See skript arvutab täisnurkse kolmnurga hüpotenuusi pikkuse.
+
+# Küsime kasutajalt külje a väärtust
+echo "Sisesta külje a väärtus:"
+read a
+
+# Küsime kasutajalt külje b väärtust
+echo "Sisesta külje b väärtus:"
+read b
+
+# Arvutame hüpotenuusi
+c=$(bc -l <<< "sqrt($a^2 + $b^2)")
+
+# Väljastame tulemuse kahe kohaga pärast komat
+printf "c = %.2f\n" $c
