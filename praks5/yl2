@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+# See skript arvutab kolmnurga pindala Heroni valemi abil.
+#
+# Küsime külje a väärtust
+echo "Sisesta külje a väärtus:"
+read a
+#
+# Küsime  külje b väärtust
+echo "Sisesta külje b väärtus:"
+read b
+#
+# Küsime külje c väärtust
+echo "Sisesta külje c väärtus:"
+read c
+#
+# Arvutame poolümbermõõdu
+s=$(bc -l <<< "($a + $b + $c) / 2")
+#
+# Arvutame pindala Heroni valemi abil
+area=$(bc -l <<< "sqrt($s * ($s - $a) * ($s - $b) * ($s - $c))")
+#
+# Väljastame tulemuse kahe kohaga pärast komat
+printf "Pindala = %.2f\n" $area
+#
