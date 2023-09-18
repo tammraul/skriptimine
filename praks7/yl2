@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+# Küsitakse kasutajalt kuu number
+read -p "Sisesta kuu number: " kuu
+#
+# sisestatud väärtus on ikka  number
+if ! [[ "$kuu" =~ ^[0-9]+$ ]]; then
+    echo "Viga: Sisestatud kuu number ei ole number."
+    exit 1
+fi
+#
+# Määratakse vastav aastaeg vastavalt kuu numbrile
+case $kuu in
+    12|1|2)
+        echo "Praegu on talv."
+        ;;
+    3|4|5)
+        echo "Praegu on kevad."
+        ;;
+    6|7|8)
+        echo "Praegu on suvi."
+        ;;
+    9|10|11)
+        echo "Praegu on sügis."
+        ;;
+    *)
+        echo "Viga: Sisestatud kuu number ei kuulu vahemikku 1-12"
+        exit 1
+        ;;
+esac
