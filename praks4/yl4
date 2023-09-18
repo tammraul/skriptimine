@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+read -p "Mitu reisijat on grupis? " reisijaid
+read -p "Mitu kohta on bussis? " kohti
+#
+if [ "$reisijaid -lt $koht"i ]
+then
+  ule=$(("$kohti - $reisijaid"))
+  echo "Koik mahuvad peale. Vabaks jaab" $ule "kohta."
+# Kui reisijate arv on vordne kohtade arvuga.
+elif [ "$reisijaid -eq $kohti" ]
+then
+  echo "T2idetud on 1 buss, maha ei jaa keegi."
+#
+else
+  maha=$(($reisijaid - $kohti))
+  echo "T2idetud on 1 buss, maha jaab" $maha "inimest."
+fi
