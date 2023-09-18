@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+# Küsitakse kellaaega (tundide arv)
+read -p "Sisesta aja väärtus (tundide arv): " aeg
+# küsitakse nime(pole praks4 kirjelduses, aga lisati)
+read -p  "Sisesta oma nimi: " nimi 
+#kas sisestatud väärtus on ikka number
+if ! [[ "$aeg" =~ ^[0-9]+$ ]]; then
+    echo "Viga: Sisestatud aeg ei ole number."
+    exit 1
+fi
+#
+# Määratakse vastav tervitus vastavalt kellaajale
+if ((aeg >= 6 && aeg < 12)); then
+    echo "Tere hommikust, $nimi!"
+elif ((aeg >= 12 && aeg < 18)); then
+    echo "Tere päevast, $nimi!"
+elif ((aeg >= 18 && aeg < 22)); then
+    echo "Tere õhtust, $nimi!"
+elif ((aeg >= 22 && aeg < 24)) || ((aeg >= 0 && aeg < 6)); then
+    echo "Head ööd, $nimi!"
+else
+    echo "Viga: Sisestatud aeg ei kuulu vahemikku 0-23."
+    exit 1
+fi #lõpp
