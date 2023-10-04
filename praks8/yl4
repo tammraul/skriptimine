@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Küsib kasutajalt suvalist arvu
+read -p "Sisesta suvaline arv: " arv
+
+
+jagaja=2
+algarv=true
+
+
+if [ $arv -lt 2 ]; then
+  algarv=false
+fi
+
+while [ $jagaja -le $((arv / 2)) ]; do
+  if [ $((arv % jagaja)) -eq 0 ]; then
+    algarv=false
+    break
+  fi
+  jagaja=$((jagaja + 1))
+done
+
+# Väljastame vastava teate
+if $algarv; then
+  echo "$arv - on algarv"
+else
+  echo "$arv - ei ole algarv"
+fi
