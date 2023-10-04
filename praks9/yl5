@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "Sisesta ridade arv: "
+read ridade_arv
+
+for i in $(seq $ridade_arv)
+do
+    for j in $(seq 1 $(($ridade_arv - $i)))
+    do
+        echo -n "o "
+    done
+    for j in $(seq 1 $i)
+    do
+        echo -n "* "
+    done
+    echo
+done
