@@ -1,0 +1,15 @@
+#!/bin/bash
+
+summa=0
+ 
+for i in {1..10}
+do
+  
+  jaak=$((i % 2))
+  if [ $jaak -eq 0 ]
+  then
+    summa=$((summa+$i))
+  fi
+done
+
+echo "Arvude vahemikus 1 kuni 10 paarisarvude summa on: $summa"
