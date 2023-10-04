@@ -1,0 +1,22 @@
+#!/bin/bash
+
+echo "Sisesta suvaline täisarv: "
+read arv
+
+# Kontroll, kas arv on negatiivne
+if [ $arv -lt 0 ]; then
+    arv=${arv#-}
+fi
+
+summa=0
+while [ $arv -gt 0 ]; do
+    jääk=$((arv % 10))
+    summa=$((summa + jääk))
+    arv=$((arv / 10))
+done
+
+if [ $summa -eq 0 ]; then
+    echo "Arvu $1 numbrite summa on 0"
+else
+    echo "Arvu $1 numbrite summa on $summa"
+fi
