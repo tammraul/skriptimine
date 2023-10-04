@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Küsime kasutajalt kuu numbrit
+read -p "Sisesta kuu number (1-12): " kuu_num
+
+# Kontrolli, kas sisestatud arv on vahemikus 1-12
+case $kuu_num in
+  1)
+    kuu="jaanuar"
+    ;;
+  2)
+    kuu="veebruar"
+    ;;
+  3)
+    kuu="märts"
+    ;;
+  4)
+    kuu="aprill"
+    ;;
+  5)
+    kuu="mai"
+    ;;
+  6)
+    kuu="juuni"
+    ;;
+  7)
+    kuu="juuli"
+    ;;
+  8)
+    kuu="august"
+    ;;
+  9)
+    kuu="september"
+    ;;
+  10)
+    kuu="oktoober"
+    ;;
+  11)
+    kuu="november"
+    ;;
+  12)
+    kuu="detsember"
+    ;;
+  *)
+    echo "Vigane sisend! Sisestatud kuu number peab olema vahemikus 1-12."
+    exit 1
+    ;;
+esac
+
+# Väljastabe vastava kuu nime
+echo "See on $kuu"
