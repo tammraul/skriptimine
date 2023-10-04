@@ -1,0 +1,26 @@
+#!/bin/bash
+
+echo "Sisesta ridade arv: "
+read ridade_arv
+
+echo "Sisesta tärnide arv reas: "
+read tarnide_arv
+
+for i in $(seq $ridade_arv)
+do
+    if [ $i -eq 1 -o $i -eq $ridade_arv ]
+    then
+        for j in $(seq $tarnide_arv)
+        do
+            echo -n "* "
+        done
+    else
+        echo -n "* "
+        for j in $(seq $(($tarnide_arv - 2)))
+        do
+            echo -n "  "
+        done
+        echo -n "* "
+    fi
+    echo
+done
